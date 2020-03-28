@@ -3,6 +3,23 @@
 ![License](https://img.shields.io/github/license/Ludorg/s_fractal_cpp)
 ![Twitter Follow](https://img.shields.io/twitter/follow/Ludorg1?style=social)
 
+## Mandelbrot algorithm
+
+Let $C$ a complex number.
+$C$ depends on the coordinates of the pixel.
+
+Let $Z_n$ a complex number. $Z_{n+1} = Z_n * Z_n + C$
+
+if $\|Z_n\|$ > 2 then the color of $C$ is $f(n)$
+
+## Julia algorithm
+
+Let C and Z complex numbers.
+Z depends on the coordinates of the pixel
+c is a constant
+if ||zn|| > 2 color of z is f(n)
+
+
 ## Some history on this old code
 
 This code was developed in 2004 and was part of an ambitious (and immodest) side project named __Sofia__. It intended to be a way for developing knowledge.
