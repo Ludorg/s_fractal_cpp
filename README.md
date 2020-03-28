@@ -5,7 +5,7 @@
 
 ## Mandelbrot algorithm
 
-### LaTeX/Markdown format
+### Mandelbrot algorithm in LaTeX/Markdown format
 
 Let $C$ a complex number.
 $C$ depends on the coordinates of the pixel.
@@ -14,7 +14,7 @@ Let $Z_n$ a complex number. $Z_{n+1} = Z_n * Z_n + C$
 
 if $\|Z_n\|$ > 2 then the color of $C$ is $f(n)$
 
-### Github format (no inline LaTeX in Markdown)
+### Mandelbrot algorithm in Github format (no inline LaTeX in Markdown)
 
 Let ![C](https://latex.codecogs.com/svg.latex?C) a complex number.
 ![C](https://latex.codecogs.com/svg.latex?C) depends on the coordinates of the pixel.
@@ -25,13 +25,21 @@ if <img src="https://latex.codecogs.com/svg.latex?\|Z_n\| > 2"/> then the color 
 
 ## Julia algorithm
 
-### LaTeX/Markdown format
+### Julia algorithm in LaTeX/Markdown format
 
-Let <img src="https://latex.codecogs.com/svg.latex?C"/> and <img src="https://latex.codecogs.com/svg.latex?Z"/> complex numbers.
-Z depends on the coordinates of the pixel
-c is a constant
-if ||zn|| > 2 color of z is f(n)
+Let $C$ and $Z$ complex numbers.
+$Z$ depends on the coordinates of the pixel.
+$C$ is a constant.
 
+if $\|Z_n\|$ > 2 then the color of $Z$ is $f(n)$
+
+### Julia algorithm in Github format (no inline LaTeX in Markdown)
+
+Let ![C](https://latex.codecogs.com/svg.latex?C) and ![Z](https://latex.codecogs.com/svg.latex?Z) complex numbers.
+![Z](https://latex.codecogs.com/svg.latex?Z) depends on the coordinates of the pixel.
+![C](https://latex.codecogs.com/svg.latex?C) is a constant.
+
+if <img src="https://latex.codecogs.com/svg.latex?\|Z_n\| > 2"/> then the color of ![Z](https://latex.codecogs.com/svg.latex?Z) is ![f(n)](https://latex.codecogs.com/svg.latex?f(n))
 
 ## Some history on this old code
 
