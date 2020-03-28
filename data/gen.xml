@@ -6,93 +6,33 @@
 			<ParamsId>1</ParamsId>
 		</Image>
 		<Image id="2">
-			<Type>Mandelbrot</Type>
-			<ParamsId>2</ParamsId>
-		</Image>
-		<Image id="3">
-			<Type>Mandelbrot</Type>
-			<ParamsId>3</ParamsId>
-		</Image>
-		<Image id="4">
 			<Type>Julia</Type>
 			<ParamsId>1</ParamsId>
 		</Image>
-		<Image id="5">
-			<Type>Julia</Type>
-			<ParamsId>2</ParamsId>
-		</Image>
 	</Scenario>
 	<MandelbrotParams id="1">
-		<width>150</width>
-		<height>150</height>
-		<maxIterations>50</maxIterations>
+		<width>600</width>
+		<height>600</height>
+		<maxIterations>100</maxIterations>
 		<minC>
-			<real>-1.5</real>
-			<imag>-1.5</imag>
+			<real>0.25</real>
+			<imag>0.25</imag>
 		</minC>
 		<maxC>
-			<real>1.5</real>
-			<imag>1.5</imag>
+			<real>0.65</real>
+			<imag>0.65</imag>
 		</maxC>
 		<minColor>
 			<red>0</red>
-			<green>0</green>
-			<blue>0</blue>
+			<green>64</green>
+			<blue>64</blue>
 		</minColor>
 		<maxColor>
 			<red>255</red>
-			<green>255</green>
+			<green>225</green>
 			<blue>255</blue>
 		</maxColor>
-		<outputFile>mandelbrot1.tga</outputFile>
-	</MandelbrotParams>
-	<MandelbrotParams id="2">
-		<width>150</width>
-		<height>150</height>
-		<maxIterations>50</maxIterations>
-		<minC>
-			<real>-1.5</real>
-			<imag>-1.5</imag>
-		</minC>
-		<maxC>
-			<real>1.5</real>
-			<imag>1.5</imag>
-		</maxC>
-		<minColor>
-			<red>0</red>
-			<green>0</green>
-			<blue>0</blue>
-		</minColor>
-		<maxColor>
-			<red>0</red>
-			<green>255</green>
-			<blue>255</blue>
-		</maxColor>
-		<outputFile>mandelbrot2.tga</outputFile>
-	</MandelbrotParams>
-	<MandelbrotParams id="3">
-		<width>150</width>
-		<height>150</height>
-		<maxIterations>50</maxIterations>
-		<minC>
-			<real>-1.5</real>
-			<imag>-1.5</imag>
-		</minC>
-		<maxC>
-			<real>1.5</real>
-			<imag>1.5</imag>
-		</maxC>
-		<minColor>
-			<red>0</red>
-			<green>0</green>
-			<blue>0</blue>
-		</minColor>
-		<maxColor>
-			<red>0</red>
-			<green>0</green>
-			<blue>255</blue>
-		</maxColor>
-		<outputFile>mandelbrot3.tga</outputFile>
+		<outputFile>mandelbrot12.tga</outputFile>
 	</MandelbrotParams>
 	<JuliaParams id="1">
 		<width>150</width>
@@ -120,34 +60,6 @@
 			<green>255</green>
 			<blue>255</blue>
 		</maxColor>
-		<outputFile>julia1.tga</outputFile>
-	</JuliaParams>
-	<JuliaParams id="2">
-		<width>600</width>
-		<height>600</height>
-		<maxIterations>50</maxIterations>
-		<minZ>
-			<real>-0.0</real>
-			<imag>-0.0</imag>
-		</minZ>
-		<maxZ>
-			<real>1.0</real>
-			<imag>1.0</imag>
-		</maxZ>
-		<c>
-			<real>0.35</real>
-			<imag>0.35</imag>
-		</c>
-		<minColor>
-			<red>0</red>
-			<green>0</green>
-			<blue>0</blue>
-		</minColor>
-		<maxColor>
-			<red>128</red>
-			<green>128</green>
-			<blue>255</blue>
-		</maxColor>
-		<outputFile>julia19.tga</outputFile>
+		<outputFile>julia23.tga</outputFile>
 	</JuliaParams>
 </Fractal>
