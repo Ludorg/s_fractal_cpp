@@ -10,6 +10,7 @@
 //
 
 #include <stdexcept>
+#include <cstring>
 #include <cstdio>
 
 #include "s_image_data.h"
