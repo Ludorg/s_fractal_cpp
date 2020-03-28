@@ -1,11 +1,15 @@
-# s_fractal_cpp: C++ Mandelbrot and Julia Fractals Generator
+# s_fractal_cpp: C++ Mandelbrot and Julia fractals generator
 
 ![License](https://img.shields.io/github/license/Ludorg/s_fractal_cpp)
 ![Twitter Follow](https://img.shields.io/twitter/follow/Ludorg1?style=social)
 
 s_fractal_cpp is a Mandelbrot and Julia fractals generator written in C++.
 
-The generation parameters are specified in an XML file. The generated images are in [TGA](http://ludorg.net/amnesia/TGA_File_Format_Spec.html) format.
+The generation parameters are specified in an XML file. The generated images are in [TGA](https://ludorg.net/amnesia/TGA_File_Format_Spec.html) format. 
+
+Image below was generated with s_fractal_cpp.
+
+<a href="./data/docs_img/mandelbrot12.png"><img src="./data/docs_img/mandelbrot12.png" width="40%"/></a>
 
 ## Prerequisites
 
@@ -14,7 +18,7 @@ It now just requires a WSL (Windows Subsystem for Linux) or a Linux shell with C
 
 To install WSL on Windows 10, read the [Installation Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
-For a quick use of a Linux shell, [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/) is a good solution. It was used to test compilation of s_fractal_cpp.
+For a quick use of a Linux shell, [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/) is a perfect solution. It was used to test compilation of s_fractal_cpp.
 
 ### LibXML2 install
 
@@ -28,19 +32,114 @@ sudo apt-get install libxml2
 sudo apt-get install cmake
 ```
 
-## Compilation
+## Compilation of s_fractal_cpp
 
-After cloning this repo, compilation is made with cmake and make
+After cloning this repo, compilation is made with cmake and make.
 
 ```bash
 cmake -Bbuild -H.
-cd build
+cd build/
 make
 ```
 
+The image below is a screen capture of the compilation in a Linux shell with [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/).
 
+<img src="./data/docs_img/build_vsonline.png" width="70%"/>
+
+## Running s_fractal_cpp
+
+Build files and CMake files are generated in 'build' folder. A 'bin' directory is created at root level. At this same level, there is a 'data' folder with a fractal.xml file. This file contains the parameters for generation of Mandelbrot and Julia fractals. fractal.xml is the default filename used. This filename can be provided as first command line argmuent.
+
+```bash
+cd data/
+../bin/s_fractal_cpp
+../bin/s_fractal_cpp gen.xml
+```
+
+The image below is a screen capture of program running in [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/).
+
+<img src="./data/docs_img/run_vsonline.png" width="70%"/>
+
+### XML configuration files for s_fractal_cpp
+
+Hereafter an example of an XML configuration file for s_fractal_cpp.
+
+Root Node is 'Fractal', Followed by 'Scenario' which contains a sequence of 'Image'. 'Image' contains 'Type' and 'ParamsId'. After 'Scenario' definition, 'MandelbrotParams' and 'JuliaParams' are described.
+
+NB: XML parsing is not very robust and errors are not always detected...
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Fractal>
+	<Scenario>
+        <Image id="1">
+			<Type>Mandelbrot</Type> <!-- Mandelbrot or Julia -->
+			<ParamsId>1</ParamsId> <!-- id of MandelbrotParams (see below) -->
+		</Image>
+		<Image id="2">
+			<Type>Julia</Type>
+			<ParamsId>1</ParamsId> <!-- id of JuliaParams (see below) -->
+		</Image>
+    </Scenario>
+    <MandelbrotParams id="1"> <!-- MandelbrotParams id #1 -->
+		<width>600</width> <!-- output image size -->
+		<height>600</height>
+		<maxIterations>100</maxIterations> <!-- maxIterations is used to compute the step -->
+		<minC>
+			<real>0.25</real> <!-- min value for C -->
+			<imag>0.25</imag>
+		</minC>
+		<maxC>
+			<real>0.65</real> <!-- max value for C -->
+			<imag>0.65</imag>
+		</maxC>
+		<minColor> <!-- RGB color definition -->
+			<red>0</red>
+			<green>64</green>
+			<blue>64</blue>
+		</minColor>
+		<maxColor> <!-- RGB color definition -->
+			<red>255</red>
+			<green>225</green>
+			<blue>255</blue>
+		</maxColor>
+		<outputFile>mandelbrot12.tga</outputFile>  <!-- output filename -->
+	</MandelbrotParams>
+	<JuliaParams id="1"> <!-- JuliaParams id #1 -->
+		<width>150</width> <!-- output image size -->
+		<height>150</height>
+		<maxIterations>50</maxIterations> <!-- maxIterations is used to compute the step -->
+		<minZ> <!-- min value for Z -->
+			<real>-0.5</real>
+			<imag>-0.5</imag>
+		</minZ>
+		<maxZ> <!-- max value for Z -->
+			<real>0.5</real>
+			<imag>0.5</imag>
+		</maxZ>
+		<c> <!-- value for C -->
+			<real>0.5</real>
+			<imag>0.5</imag>
+		</c>
+		<minColor> <!-- RGB color definition -->
+			<red>0</red>
+			<green>0</green>
+			<blue>0</blue>
+		</minColor>
+		<maxColor> <!-- RGB color definition -->
+			<red>255</red>
+			<green>255</green>
+			<blue>255</blue>
+		</maxColor>
+		<outputFile>julia23.tga</outputFile> <!-- output filename -->
+	</JuliaParams>
+</Fractal>
+```
 
 ## Mandelbrot algorithm
+
+A pseudo-code description of the Mandelbrot algorithm used by s_fractal_cpp is detailed hereafter.
+For a complete description of Mandelbrot set, refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Mandelbrot_set).
 
 ### Mandelbrot algorithm in LaTeX/Markdown format
 
@@ -61,6 +160,9 @@ Let ![Z(n)](https://latex.codecogs.com/svg.latex?Z(n)) a complex number. <img sr
 if <img src="https://latex.codecogs.com/svg.latex?\|Z(n)\|"/> > 2 then the color of <img src="https://latex.codecogs.com/svg.latex?C"/> is <img src="https://latex.codecogs.com/svg.latex?f(n)"/>
 
 ## Julia algorithm
+
+A pseudo-code description of the Julia algorithm used by s_fractal_cpp is detailed hereafter.
+For a complete description of Julia set, refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Julia_set).
 
 ### Julia algorithm in LaTeX/Markdown format
 
