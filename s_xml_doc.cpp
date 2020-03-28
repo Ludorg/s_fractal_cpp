@@ -12,44 +12,44 @@
 
 SOFIA_NS_BEGIN
 
-const int   Options = XML_PARSE_NONET | XML_PARSE_NOWARNING | XML_PARSE_NOERROR;
-const char* Encoding = "UTF-8";
+const int Options = XML_PARSE_NONET | XML_PARSE_NOWARNING | XML_PARSE_NOERROR;
+const char *Encoding = "UTF-8";
 
 XMLDoc::XMLDoc() : doc_(0), rootNode_(0), ctxt_(0)
-{ 
+{
 }
 
-XMLDoc::XMLDoc( const char* fileName ) : doc_(0), rootNode_(0), ctxt_(0)
+XMLDoc::XMLDoc(const char *fileName) : doc_(0), rootNode_(0), ctxt_(0)
 {
-    if ( false == parse( fileName ) )
-        throw std::runtime_error( "XMLDoc::XMLDoc|Unexpected error" );
+    if (false == parse(fileName))
+        throw std::runtime_error("XMLDoc::XMLDoc|Unexpected error");
 }
 
 XMLDoc::~XMLDoc()
 {
-    if( doc_ != 0 ) 
+    if (doc_ != 0)
     {
-        xmlFreeDoc( doc_) ;
-        doc_        = 0;
-        rootNode_   = 0;
+        xmlFreeDoc(doc_);
+        doc_ = 0;
+        rootNode_ = 0;
     }
-    if( ctxt_ != 0 ) 
+    if (ctxt_ != 0)
     {
-        xmlFreeParserCtxt( ctxt_ );
-        ctxt_       = 0;
+        xmlFreeParserCtxt(ctxt_);
+        ctxt_ = 0;
     }
 }
 
-bool XMLDoc::parse( const char* fileName )
-{    
-    ctxt_       = xmlNewParserCtxt();
+bool XMLDoc::parse(const char *fileName)
+{
+    ctxt_ = xmlNewParserCtxt();
 
-    doc_        = xmlCtxtReadFile( ctxt_, fileName, Encoding, Options );
+    doc_ = xmlCtxtReadFile(ctxt_, fileName, Encoding, Options);
 
-    rootNode_   = xmlDocGetRootElement( doc_ );
+    rootNode_ = xmlDocGetRootElement(doc_);
 
-    if ( 0 == rootNode_ )
-    {		
+    if (0 == rootNode_)
+    {
         return false;
     }
     return true;

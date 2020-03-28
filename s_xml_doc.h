@@ -1,4 +1,4 @@
-#if !defined( S_XML_DOC_H )
+#if !defined(S_XML_DOC_H)
 #define S_XML_DOC_H 1
 
 // Sofia (Sofia_aleph)
@@ -21,22 +21,21 @@ class XMLDoc
 {
 public:
 	XMLDoc();
-	XMLDoc( const char* fileName );
+	XMLDoc(const char *fileName);
 
 	virtual ~XMLDoc();
-    
-    bool parse( const char* fileName );
 
-    inline xmlNodePtr getRootNode( ) { return rootNode_; }
+	bool parse(const char *fileName);
+
+	inline xmlNodePtr getRootNode() { return rootNode_; }
 
 private:
-    xmlDocPtr        doc_;
-	xmlNodePtr       rootNode_;
+	xmlDocPtr doc_;
+	xmlNodePtr rootNode_;
 	xmlParserCtxtPtr ctxt_;
 
-    XMLDoc& operator=( const XMLDoc& );
-	XMLDoc( const XMLDoc& );
-
+	XMLDoc &operator=(const XMLDoc &);
+	XMLDoc(const XMLDoc &);
 };
 
 SOFIA_NS_END
