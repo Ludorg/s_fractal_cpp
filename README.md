@@ -19,7 +19,7 @@ if $\|Z_n\|$ > 2 then the color of $C$ is $f(n)$
 Let ![C](https://latex.codecogs.com/svg.latex?C) a complex number.
 ![C](https://latex.codecogs.com/svg.latex?C) depends on the coordinates of the pixel.
 
-Let ![Z(n)](https://latex.codecogs.com/svg.latex?Z(n)) a complex number. <img src="https://latex.codecogs.com/svg.latex?Z(n+1) = Z(n) \ast Z(n) + C"/>
+Let ![Z(n)](https://latex.codecogs.com/svg.latex?Z(n)) a complex number. <img src="https://latex.codecogs.com/svg.latex?Z(n+1)=Z(n)*Z(n)+C"/>
 
 if <img src="https://latex.codecogs.com/svg.latex?\|Z(n)\|"/> > 2 then the color of <img src="https://latex.codecogs.com/svg.latex?C"/> is <img src="https://latex.codecogs.com/svg.latex?f(n)"/>
 
