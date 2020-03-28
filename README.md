@@ -19,9 +19,9 @@ if $\|Z_n\|$ > 2 then the color of $C$ is $f(n)$
 Let ![C](https://latex.codecogs.com/svg.latex?C) a complex number.
 ![C](https://latex.codecogs.com/svg.latex?C) depends on the coordinates of the pixel.
 
-Let ![Z_n](https://latex.codecogs.com/svg.latex?Z_n) a complex number. <img src="https://latex.codecogs.com/svg.latex?Z_{n+1} = Z_n * Z_n + C"/>
+Let ![Z(n)](https://latex.codecogs.com/svg.latex?Z(n)) a complex number. <img src="https://latex.codecogs.com/svg.latex?Z(n+1) = Z(n) * Z(n) + C"/>
 
-if <img src="https://latex.codecogs.com/svg.latex?\|Z_n\| > 2"/> then the color of <img src="https://latex.codecogs.com/svg.latex?C"/> is <img src="https://latex.codecogs.com/svg.latex?f(n)"/>
+if <img src="https://latex.codecogs.com/svg.latex?\|Z(n)\| > 2"/> then the color of <img src="https://latex.codecogs.com/svg.latex?C"/> is <img src="https://latex.codecogs.com/svg.latex?f(n)"/>
 
 ## Julia algorithm
 
@@ -39,7 +39,7 @@ Let ![C](https://latex.codecogs.com/svg.latex?C) and ![Z](https://latex.codecogs
 ![Z](https://latex.codecogs.com/svg.latex?Z) depends on the coordinates of the pixel.
 ![C](https://latex.codecogs.com/svg.latex?C) is a constant.
 
-if <img src="https://latex.codecogs.com/svg.latex?\|Z_n\| > 2"/> then the color of ![Z](https://latex.codecogs.com/svg.latex?Z) is ![f(n)](https://latex.codecogs.com/svg.latex?f(n))
+if <img src="https://latex.codecogs.com/svg.latex?\|Z(n)\| > 2"/> then the color of ![Z](https://latex.codecogs.com/svg.latex?Z) is ![f(n)](https://latex.codecogs.com/svg.latex?f(n))
 
 ## Some history on this old code
 
