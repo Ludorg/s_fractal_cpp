@@ -1,7 +1,44 @@
-# s_fractal_cpp
+# s_fractal_cpp: C++ Mandelbrot and Julia Fractals Generator
 
 ![License](https://img.shields.io/github/license/Ludorg/s_fractal_cpp)
 ![Twitter Follow](https://img.shields.io/twitter/follow/Ludorg1?style=social)
+
+s_fractal_cpp is a Mandelbrot and Julia fractals generator written in C++.
+
+The generation parameters are specified in an XML file. The generated images are in [TGA](http://ludorg.net/amnesia/TGA_File_Format_Spec.html) format.
+
+## Prerequisites
+
+In 2004, s_fractal_cpp was originally compiled on Windows XP with Visual Studio 2003, but it was portable C++.
+It now just requires a WSL (Windows Subsystem for Linux) or a Linux shell with CMake and libxml2 installed.
+
+To install WSL on Windows 10, read the [Installation Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+
+For a quick use of a Linux shell, [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/) is a good solution. It was used to test compilation of s_fractal_cpp.
+
+### LibXML2 install
+
+```bash
+sudo apt-get install libxml2
+```
+
+### CMake install
+
+```bash
+sudo apt-get install cmake
+```
+
+## Compilation
+
+After cloning this repo, compilation is made with cmake and make
+
+```bash
+cmake -Bbuild -H.
+cd build
+make
+```
+
+
 
 ## Mandelbrot algorithm
 
