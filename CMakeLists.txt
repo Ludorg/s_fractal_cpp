@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.7)
 project(s_fractal_cpp VERSION 1.0)
 
 find_package(LibXml2 REQUIRED)
