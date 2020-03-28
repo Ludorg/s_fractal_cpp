@@ -14,18 +14,20 @@ Let $Z_n$ a complex number. $Z_{n+1} = Z_n * Z_n + C$
 
 if $\|Z_n\|$ > 2 then the color of $C$ is $f(n)$
 
-### Github format 
+### Github format (no inline LaTeX in Markdown)
 
-Let <img src="https://latex.codecogs.com/svg.latex?C"/> a complex number.
-<img src="https://latex.codecogs.com/svg.latex?C"/> depends on the coordinates of the pixel.
+Let ![C](https://latex.codecogs.com/svg.latex?C) a complex number.
+![C](https://latex.codecogs.com/svg.latex?C) depends on the coordinates of the pixel.
 
-Let <img src="https://latex.codecogs.com/svg.latex?Z_n"/> a complex number. <img src="https://latex.codecogs.com/svg.latex?Z_{n+1} = Z_n * Z_n + C"/>
+Let ![Z_n](https://latex.codecogs.com/svg.latex?Z_n) a complex number. <img src="https://latex.codecogs.com/svg.latex?Z_{n+1} = Z_n * Z_n + C"/>
 
 if <img src="https://latex.codecogs.com/svg.latex?\|Z_n\| > 2"/> then the color of <img src="https://latex.codecogs.com/svg.latex?C"/> is <img src="https://latex.codecogs.com/svg.latex?f(n)"/>
 
 ## Julia algorithm
 
-Let C and Z complex numbers.
+### LaTeX/Markdown format
+
+Let <img src="https://latex.codecogs.com/svg.latex?C"/> and <img src="https://latex.codecogs.com/svg.latex?Z"/> complex numbers.
 Z depends on the coordinates of the pixel
 c is a constant
 if ||zn|| > 2 color of z is f(n)
