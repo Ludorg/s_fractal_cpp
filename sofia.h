@@ -7,6 +7,8 @@
 // 0.0.1 2004/05/02 : file creation
 // 0.0.2 2004/06/03 : add version data
 
+// 0.0.13 2021/08/31 : github.dev edition
+
 #if !defined(SOFIA_H)
 #define SOFIA_H
 
