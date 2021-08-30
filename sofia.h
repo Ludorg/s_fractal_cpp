@@ -8,6 +8,7 @@
 // 0.0.2 2004/06/03 : add version data
 
 // 0.0.13 2021/08/31 : github.dev edition
+// 0.0.15 2021/08/31 : github.dev edition was not made with a Pull Request
 
 #if !defined(SOFIA_H)
 #define SOFIA_H
